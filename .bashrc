@@ -1,3 +1,10 @@
+DEVHOME="${HOME}/dev"
+
+if uname -s | grep -qi CYGWIN; then
+    . ~/.bashrc_winacc
+fi
+
+export PYTHONPATH="$DEVHOME/lib/python"
 export PS1="$ "
 
 alias ll='ls -l'
@@ -7,7 +14,6 @@ alias l1='ls -1'
 alias l1d='ls -1d'
 
 alias gri='grep -i'
-
 alias pd='pushd .'
 alias po='popd' 
 
@@ -18,7 +24,3 @@ alias listpath='echo $PATH|tr ":" "\n"'
 
 shopt -s nocaseglob
 shopt -s nullglob
-
-if uname -s | grep -qi CYGWIN; then
-    . ~/.bashrc_winacc
-fi
