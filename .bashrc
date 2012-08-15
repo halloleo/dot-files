@@ -1,11 +1,11 @@
 export PS1="$ "
 
 if uname -s | grep -qi CYGWIN; then
-    . ~/.bashrc_winacc
+    . ~/.bash_winwork
 fi
 
 if uname -s | grep -qi Darwin; then
-    . ~/.bashrc_machome
+    . ~/.bash_machome
 fi
 
 alias ll='ls -lh'
@@ -15,7 +15,6 @@ alias l1='ls -1'
 alias l1d='ls -1d'
 
 alias g=git
-
 alias gri='grep -i'
 
 alias pd='pushd .'
@@ -28,4 +27,3 @@ alias listpath='echo $PATH|tr ":" "\n"'
 
 shopt -s nocaseglob
 shopt -s nullglob
-

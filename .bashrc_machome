@@ -1,4 +1,0 @@
-export llbongu=/Volumes/LastLionBook/Users/bongu/
-export emacsbin=/Applications/Optional/Text/Emacs.app/Contents/MacOS/Emacs
-
-alias emacsnw="$emacsbin -nw"

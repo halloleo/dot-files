@@ -1,2 +1,2 @@
-GIT_PAGER=cat
-LESS=$LESS" -d"
+export GIT_PAGER=cat
+export LESS=$LESS" -d"
