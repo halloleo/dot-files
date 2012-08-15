@@ -1,4 +1,5 @@
 export PS1="$ "
+export LESSHISTFILE="-"
 
 if uname -s | grep -qi CYGWIN; then
     . ~/.bash_winwork
