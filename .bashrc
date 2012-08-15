@@ -1,10 +1,20 @@
 export PS1="$ "
 
-alias ll='ls -l'
-alias lld='ls -ld'
-alias lla='ls -la'
+if uname -s | grep -qi CYGWIN; then
+    . ~/.bashrc_winacc
+fi
+
+if uname -s | grep -qi Darwin; then
+    . ~/.bashrc_machome
+fi
+
+alias ll='ls -lh'
+alias lld='ls -lhd'
+alias lla='ls -lha'
 alias l1='ls -1'
 alias l1d='ls -1d'
+
+alias g=git
 
 alias gri='grep -i'
 
@@ -19,6 +29,3 @@ alias listpath='echo $PATH|tr ":" "\n"'
 shopt -s nocaseglob
 shopt -s nullglob
 
-if uname -s | grep -qi CYGWIN; then
-    . ~/.bashrc_winacc
-fi

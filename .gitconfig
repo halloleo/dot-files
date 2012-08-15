@@ -1,0 +1,13 @@
+[user]
+	name = halloleo
+	email = git@halloleo.dot.hailmail.dot.net
+[core]
+	excludesfile = ~/.gitignore_global
+[github]
+	user = halloleo
+[credential]
+	helper = store
+[alias]
+	cf = config
+	cg = config --global
+	st = status
