@@ -1,4 +1,5 @@
 .#*
+.emacs
 .XWinrc
 .recently-used.xbel
 .rnd
@@ -14,6 +15,7 @@
 .Trash/
 .dropbox/
 .emacsdata/
+.protected/
 bau/
 docs/
 download/

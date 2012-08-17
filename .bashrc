@@ -1,6 +1,5 @@
-export DEVHOME="${HOME}/dev"
+# bash start up file
 
-export PYTHONPATH="$DEVHOME/lib/python"
 export PS1="$ "
 export LESSHISTFILE="-"
 
@@ -11,6 +10,8 @@ fi
 if uname -s | grep -qi Darwin; then
     . ~/.bash_machome
 fi
+
+export PYTHONPATH="$DEVHOME/lib/python"
 
 alias ll='ls -lh'
 alias lld='ls -lhd'

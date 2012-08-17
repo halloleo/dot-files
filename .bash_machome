@@ -1,3 +1,9 @@
+# some needed var constants
+export DEVHOME="${HOME}/dev"
+
+# machine-depended env vars
+export GIT_EDITOR=emacsclient
+
 # the vexatious path stuff
 LAUNCHPATHFILE=/etc/launchd.conf
 while read cmd var val; do

@@ -1,8 +1,0 @@
-export LC_ALL=C
-
-export http_proxy=http://broleo:quad3412@192.168.80.81:3129
-alias wget='wget --proxy-user=broleo --proxy-password=quad3412'
-
-alias python="python -i"
-
-export DEVHOME="c:/home/dev"

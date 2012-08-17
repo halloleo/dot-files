@@ -1,5 +1,12 @@
-export LC_ALL=C
+# some needed var constants
+export DEVHOME="c:/home/dev"
 
-alias python="python -i"
+# machine-depended env vars
+export LC_ALL=C
+export GIT_EDITOR=OpenInEmacsWaitCygwin.sh
+
+# alaises
+alias python="python -i" #cheating here for tty issues in cygwin bash+emacs
+alias mklink="cmd.exe /c mklink" 
 
 . ~/.protected/bashrc_acc
