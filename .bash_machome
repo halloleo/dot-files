@@ -1,0 +1,11 @@
+# the vexatious path stuff
+LAUNCHPATHFILE=/etc/launchd.conf
+while read cmd var val; do
+    if [[ $cmd == "setenv" ]]; then
+        eval "export $var=$val"
+    fi
+done <"$LAUNCHPATHFILE"
+ 
+# some little helpers
+export llbongu=/Volumes/LastLionBook/Users/bongu/
+export emacsbin=/Applications/Optional/Text/Emacs.app/Contents/MacOS/bin
