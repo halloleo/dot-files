@@ -11,3 +11,5 @@
 	cf = config
 	cg = config --global
 	st = status
+[man "headman"]
+	cmd = headman
