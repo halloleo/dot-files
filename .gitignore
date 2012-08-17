@@ -1,5 +1,6 @@
 .#*
 .emacs
+.git-credentials
 .XWinrc
 .recently-used.xbel
 .rnd
