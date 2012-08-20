@@ -3,6 +3,7 @@ export DEVHOME="${HOME}/dev"
 
 # machine-depended env vars
 export GIT_EDITOR=emacsclient
+export HOMEBREW_KEEP_INFO=true
 
 # the vexatious path stuff
 LAUNCHPATHFILE=/etc/launchd.conf

@@ -2,16 +2,8 @@
 
 export PS1="$ "
 export LESSHISTFILE="-"
-
-if uname -s | grep -qi CYGWIN; then
-    . ~/.bash_winwork
-fi
-
-if uname -s | grep -qi Darwin; then
-    . ~/.bash_machome
-fi
-
-export PYTHONPATH="$DEVHOME/lib/python"
+export HISTFILESIZE=50000
+export HISTSIZE=50000
 
 alias ll='ls -lh'
 alias lld='ls -lhd'
@@ -32,3 +24,14 @@ alias listpath='echo $PATH|tr ":" "\n"'
 
 shopt -s nocaseglob
 shopt -s nullglob
+shopt -s histappend
+
+if uname -s | grep -qi CYGWIN; then
+    . ~/.bash_winwork
+fi
+
+if uname -s | grep -qi Darwin; then
+    . ~/.bash_machome
+fi
+
+export PYTHONPATH="$DEVHOME/lib/python"
