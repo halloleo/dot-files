@@ -17,6 +17,7 @@
 .dropbox/
 .emacsdata/
 .protected/
+emacs
 bau/
 docs/
 download/
@@ -37,7 +38,6 @@ Public/
 archive/
 bin/
 dev/
-emacs/
 etc/
 share/
 tmp/

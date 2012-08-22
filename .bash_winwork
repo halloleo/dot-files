@@ -8,5 +8,6 @@ export GIT_EDITOR=OpenInEmacsWaitCygwin.sh
 # alaises
 alias python="python -i" #cheating here for tty issues in cygwin bash+emacs
 alias mklink="cmd.exe /c mklink" 
+alias k9="kill -9"
 
 . ~/.protected/bashrc_acc
