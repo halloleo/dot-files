@@ -11,5 +11,6 @@
 	cf = config
 	cg = config --global
 	st = status
+        ls = ls-tree -r --name-only
 [man "headman"]
 	cmd = headman
