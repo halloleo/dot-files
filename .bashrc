@@ -26,6 +26,7 @@ shopt -s nocaseglob
 shopt -s nullglob
 shopt -s histappend
 
+
 if uname -s | grep -qi CYGWIN; then
     . ~/.bash_winwork
 fi
@@ -34,4 +35,6 @@ if uname -s | grep -qi Darwin; then
     . ~/.bash_machome
 fi
 
-export PYTHONPATH="$DEVHOME/lib/python"
+export PYTHONPATH="${MYHOME}/share/lib/python"
+
+
