@@ -1,5 +1,5 @@
 # some needed var constants
-export DEVHOME="c:/home/dev"
+export MYHOME="c:/home"
 
 # machine-depended env vars
 export LC_ALL=C

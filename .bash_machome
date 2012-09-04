@@ -1,5 +1,5 @@
 # some needed var constants
-export DEVHOME="${HOME}/dev"
+export MYHOME="${HOME}"
 
 # machine-depended env vars
 export GIT_EDITOR=emacsclient
