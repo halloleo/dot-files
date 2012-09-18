@@ -16,6 +16,7 @@
 .Trash/
 .dropbox/
 .emacsdata/
+.matplotlib/
 .protected/
 emacs
 bau/
