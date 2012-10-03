@@ -1,3 +1,8 @@
+.cups/
+.gem/
+.luarocks/
+.sh_history
+local/
 .#*
 .emacs
 .git-credentials
