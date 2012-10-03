@@ -1,3 +1,4 @@
+
 [user]
 	name = halloleo
 	email = git@halloleo.dot.hailmail.dot.net
@@ -8,9 +9,11 @@
 [credential]
 	helper = store
 [alias]
+        alias =config --get-regexp alias
 	cf = config
 	cg = config --global
 	st = status
         ls = ls-tree -r --name-only
+        tl = rev-parse --show-toplevel
 [man "headman"]
 	cmd = headman
