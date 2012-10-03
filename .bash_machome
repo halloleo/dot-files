@@ -1,5 +1,8 @@
 # some needed var constants
-export MYHOME="${HOME}"
+export WINHOME="${HOME}" # HOME in non-cygwin style (same on Mac)
+
+# general env vars used only on this machine
+export AV_LOG_FORCE_NOCOLOR=yes
 
 # machine-depended env vars
 export GIT_EDITOR=emacsclient
