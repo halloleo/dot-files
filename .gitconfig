@@ -13,7 +13,7 @@
 	cf = config
 	cg = config --global
 	st = status
-        ls = ls-tree -r --name-only
+        ls = ls-tree -r --name-only HEAD
         tl = rev-parse --show-toplevel
 [man "headman"]
 	cmd = headman
