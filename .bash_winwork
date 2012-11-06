@@ -12,6 +12,5 @@ export PYTHONPATH=`cygpath -p -w "$PYTHONPATH"`
 alias python="python -i" #cheating here for tty issues in cygwin bash+emacs
 alias mklink="cmd.exe /c mklink" 
 alias k9="kill -9"
-alias ssh2cbrfus07="plink -pw quad34 broleo@CBRFUS07"
 
 . ~/.protected/bashrc_acc
