@@ -9,7 +9,7 @@ export GIT_EDITOR=OpenInEmacsWaitCygwin.sh
 export PYTHONPATH=`cygpath -p -w "$PYTHONPATH"`
 
 # alaises
-alias python="python -i" #cheating here for tty issues in cygwin bash+emacs
+#alias python="python -i" #cheating here for tty issues in cygwin bash+emacs
 alias mklink="cmd.exe /c mklink" 
 alias k9="kill -9"
 
