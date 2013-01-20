@@ -9,13 +9,18 @@ export GIT_EDITOR=emacsclient
 export HOMEBREW_KEEP_INFO=true
 
 # the vexatious path stuff
-LAUNCHPATHFILE=/etc/launchd.conf
-while read cmd var val; do
-    if [[ $cmd == "setenv" ]]; then
-        eval "export $var=$val"
-    fi
-done <"$LAUNCHPATHFILE"
+# commented out - should not be needed
+
+# LAUNCHPATHFILE=/etc/launchd.conf
+# if [ -r "$LAUNCHPATHFILE" ]; then
+#     while read cmd var val; do
+#         if [[ $cmd == "setenv" ]]; then
+#             eval "export $var=$val"
+#         fi
+#     done <"$LAUNCHPATHFILE"
+# fi
  
-# some little helpers
-export llbongu=/Volumes/LastLionBook/Users/bongu/
+# some little helper variables
+export old_bongu=/Volumes/LastLionBook/Users/bongu/
+export old_hallo=/Volumes/wurzel/Users/hallo
 export emacsbin=/Applications/Optional/Text/Emacs.app/Contents/MacOS/bin

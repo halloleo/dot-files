@@ -36,7 +36,3 @@ fi
 if uname -s | grep -qi Darwin; then
     . ~/.bash_machome
 fi
-
-
-
-
