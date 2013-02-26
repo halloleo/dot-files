@@ -1,3 +1,6 @@
+.Xauthority
+.adobe/
+.cache/
 .cups/
 .gem/
 .luarocks/
