@@ -17,3 +17,5 @@
         tl = rev-parse --show-toplevel
 [man "headman"]
 	cmd = headman
+[push]
+	default = simple

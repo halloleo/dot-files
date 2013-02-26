@@ -14,6 +14,9 @@ alias l1d='ls -1d'
 alias g=git
 alias gri='grep -i'
 
+alias d='diff --exclude=".DS_Store"'
+alias dqr='diff -qr --exclude=".DS_Store"'
+
 alias pu='pushd .'
 alias po='popd' 
 
@@ -27,7 +30,8 @@ shopt -s nocaseglob
 shopt -s nullglob
 shopt -s histappend
 
-export PYTHONPATH="${HOME}/share/lib/python:${HOME}/local/lib/python"
+# pythonpath should already be set
+# export PYTHONPATH="${HOME}/share/lib/python:${HOME}/local/lib/python"
 
 if uname -s | grep -qi CYGWIN; then
     . ~/.bash_winwork
