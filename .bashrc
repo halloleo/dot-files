@@ -30,8 +30,7 @@ shopt -s nocaseglob
 shopt -s nullglob
 shopt -s histappend
 
-# pythonpath should already be set
-# export PYTHONPATH="${HOME}/share/lib/python:${HOME}/local/lib/python"
+# PYTHONPATH gets set in the platform profile files
 
 if uname -s | grep -qi CYGWIN; then
     . ~/.bash_winwork
