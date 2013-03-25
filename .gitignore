@@ -51,3 +51,9 @@ etc/
 share/
 tmp/
 .dvdcss/
+.VirtualBox/
+.history
+.subversion/
+pip/
+print/
+vms/
