@@ -11,6 +11,7 @@
         alias =config --get-regexp alias
 	cf = config
 	cg = config --global
+	df = diff
 	st = status
         ls = ls-tree -r --name-only HEAD
         tl = rev-parse --show-toplevel
