@@ -26,6 +26,9 @@ alias findbiggest='gfind . -printf "%s %p\n" | sort -n  -r | head | cut -d " " -
 alias listpath='echo $PATH|tr ":" "\n"'
 alias listalias="alias|sed 's/=.*$//g'"
 
+alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
+alias urldecode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.argv[1])"'
+
 shopt -s nocaseglob
 shopt -s nullglob
 shopt -s histappend
