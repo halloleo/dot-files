@@ -9,17 +9,11 @@ export GIT_EDITOR=emacsclient
 export HOMEBREW_KEEP_INFO=true
 
 # the vexatious path stuff
-# commented out - should not be needed
+# put back in again by using  launchctl's export command
+tmpfile=`mktemp -t "$$.XXXXXXXXXX"`
+launchctl export >$tmpfile
+source $tmpfile
 
-# LAUNCHPATHFILE=/etc/launchd.conf
-# if [ -r "$LAUNCHPATHFILE" ]; then
-#     while read cmd var val; do
-#         if [[ $cmd == "setenv" ]]; then
-#             eval "export $var=$val"
-#         fi
-#     done <"$LAUNCHPATHFILE"
-# fi
- 
 # some little helper variables
 export old_bongu=/Volumes/LastLionBook/Users/bongu/
 export old_hallo=/Volumes/wurzel/Users/hallo
