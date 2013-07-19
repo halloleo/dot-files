@@ -1,9 +1,14 @@
 # bash start up file
 
 export PS1="$ "
+
+shopt -s histappend
+shopt -s cmdhist
 export LESSHISTFILE="-"
-export HISTFILESIZE=50000
-export HISTSIZE=50000
+export HISTSIZE=100000
+export HISTTIMEFORMAT=" %F %T "
+export HISTCONTROL=ignorespace
+export PROMPT_COMMAND='history -a'
 
 alias ll='ls -lh'
 alias lld='ls -lhd'
@@ -31,7 +36,6 @@ alias urldecode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.
 
 shopt -s nocaseglob
 shopt -s nullglob
-shopt -s histappend
 
 # PYTHONPATH gets set in the platform profile files
 
