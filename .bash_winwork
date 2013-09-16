@@ -5,12 +5,14 @@ export WINHOME=`cygpath -p -w "${HOME}"` # HOME in non-cygwin style
 export LC_ALL=C
 export GIT_EDITOR=OpenInEmacsWaitCygwin.sh
 
-export PYTHONPATH="${HOME}/share/lib/python:${HOME}/local/lib/python"
+# export PYTHONPATH="${HOME}/share/lib/python:${HOME}/local/lib/python"
 # munch unix-style path lists into windows style (because we use windows python)
-export PYTHONPATH=`cygpath -p -w "$PYTHONPATH"`
+
+export PYTHONPATH=`cygpath -p -u "$PYTHONPATH"`
 
 # aliases
 alias mklink="cmd.exe /c mklink" 
+alias rd="cmd.exe /c rmdir" 
 alias k9="kill -9"
 
 . ~/.protected/bashrc_acc
