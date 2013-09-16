@@ -1,7 +1,7 @@
 halloleo's dot-files
 =========
 
-SEt up mainly for bash. Includes:
+dot files mainly for bash. Includes:
 
 * aliases
 * path vars like PATH and PYTHONPATH
