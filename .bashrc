@@ -1,13 +1,14 @@
 # bash start up file
 
-. ~/.bash_global
-
-# PYTHONPATH gets set in the platform profile files
-
-if uname -s | grep -qi CYGWIN; then
-    . ~/.bash_winwork
+# machine wide definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
 fi
 
-if uname -s | grep -qi Darwin; then
-    . ~/.bash_machome
+# my global definitions
+. ~/.bash_global
+
+# my machine local definitions
+if [ -f ~/.bash_local ]; then
+	. ~/.bash_local
 fi

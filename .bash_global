@@ -1,7 +1,5 @@
 # bash customization for all bashes I use
 
-export PS1="$ "
-
 shopt -s histappend
 shopt -s cmdhist
 export LESSHISTFILE="-"
