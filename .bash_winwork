@@ -1,3 +1,6 @@
+# prompt
+export PS1="$ "
+
 # some needed var constants
 export WINHOME=`cygpath -p -w "${HOME}"` # HOME in non-cygwin style
 
