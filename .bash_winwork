@@ -7,6 +7,7 @@ export WINHOME=`cygpath -p -w "${HOME}"` # HOME in non-cygwin style
 # machine-depended env vars
 export LC_ALL=C
 export GIT_EDITOR=OpenInEmacsWaitCygwin.sh
+export emacsexe="c:/software/emacs/current/bin/emacs.exe"
 
 # export PYTHONPATH="${HOME}/share/lib/python:${HOME}/local/lib/python"
 # munch unix-style path lists into windows style (because we use windows python)
