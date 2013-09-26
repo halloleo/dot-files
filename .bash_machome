@@ -7,6 +7,7 @@ export AV_LOG_FORCE_NOCOLOR=yes
 # machine-depended env vars
 export GIT_EDITOR=emacsclient
 export HOMEBREW_KEEP_INFO=true
+export emacsexe="/Applications/Optional/Text/Emacs.app/Contents/MacOS/bin/Emacs"
 
 # the vexatious path stuff
 # put back in again by using  launchctl's export command
@@ -17,4 +18,4 @@ source $tmpfile
 # some little helper variables
 export old_bongu=/Volumes/LastLionBook/Users/bongu/
 export old_hallo=/Volumes/wurzel/Users/hallo
-export emacsbin=/Applications/Optional/Text/Emacs.app/Contents/MacOS/bin
+export emacsbin=
