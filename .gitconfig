@@ -1,3 +1,9 @@
+#
+# global (user-specific) config file
+#
+# note: proxy settings go into system (machine-specific) config file
+#       so that the are not synced via the dot-files repo 
+
 [user]
 	name = halloleo
 	email = git@halloleo.dot.hailmail.dot.net
@@ -11,6 +17,8 @@
         alias =config --get-regexp alias
 	cf = config
 	cg = config --global
+        cm = commit
+        ca = commit -a 
 	df = diff
 	st = status
         ls = ls-tree -r --name-only HEAD
