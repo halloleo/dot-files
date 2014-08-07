@@ -17,8 +17,8 @@ alias l1d='ls -1d'
 alias g=git
 alias gri='grep -i'
 
-alias d='diff --exclude=".DS_Store"'
-alias dqr='diff -qr --exclude=".DS_Store"'
+alias d='diff'
+alias dqr='diff -qr --exclude=".DS_Store" --exclude="._*"'
 
 alias pu='pushd .'
 alias po='popd' 
