@@ -9,8 +9,7 @@ export AV_LOG_FORCE_NOCOLOR=yes
 
 # machine-depended env vars
 export GIT_EDITOR=emacsclient
-export HOMEBREW_KEEP_INFO=true
-export emacsexe="/Applications/Optional/Text/Emacs.app/Contents/MacOS/Emacs"
+export emacsexe="/usr/local/bin/emacs"
 
 # the vexatious path stuff
 # put back in again by using  launchctl's export command
