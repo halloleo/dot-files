@@ -36,4 +36,3 @@ alias urldecode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.
 alias wl='wc -l'
 
 shopt -s nocaseglob
-shopt -s nullglob
