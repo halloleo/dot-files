@@ -1,9 +1,7 @@
 # bash start up file
 
 # machine wide definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
-fi
+[ -f /etc/bashrc ] && . /etc/bashrc
 
 # my global definitions
 . ~/.bash_global

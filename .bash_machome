@@ -9,7 +9,11 @@ export AV_LOG_FORCE_NOCOLOR=yes
 
 # machine-depended env vars
 export GIT_EDITOR=emacsclient
-export emacsexe="/usr/local/bin/emacs"
+# path to exe of emacs APP
+export emacsexe="/usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs"
+
+# completion
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 # the vexatious path stuff
 # put back in again by using  launchctl's export command
