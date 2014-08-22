@@ -9,9 +9,8 @@ export LC_ALL=C
 export GIT_EDITOR=OpenInEmacsWaitCygwin.sh
 export emacsexe="c:/software/emacs/current/bin/emacs.exe"
 
-# completion
-echo "denk an die bash_completion!!!"
-# [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+# bash-completion
+# is done by cygwin in /etc/profile
 
 export PYTHONPATH=`cygpath -p -u "$PYTHONPATH"`
 
