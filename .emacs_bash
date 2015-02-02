@@ -1,5 +1,1 @@
-#
-# .emacs_bash: some environment vars only need in emacs shells
-#
-# Note: LEOSEMACSSHELLSTARTDIR only set and needed for cygwin
-export GIT_PAGER="cat"; export GIT_MAN_VIEWER="headman"; export LESS=$LESS" -d"; [ -n "$LEOSEMACSSHELLSTARTDIR" ] && cd "$LEOSEMACSSHELLSTARTDIR";
+export GIT_PAGER="cat"; export GIT_MAN_VIEWER="headman"; export LESS=$LESS" -d";

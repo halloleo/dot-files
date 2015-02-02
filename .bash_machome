@@ -15,11 +15,10 @@ export emacsexe="/usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs"
 # completion
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
-# the vexatious path stuff
-# put back in again by using  launchctl's export command
-tmpfile=`mktemp -t "$$.XXXXXXXXXX"`
-launchctl export >$tmpfile
-source $tmpfile
+# the again vexcious PATH stuff
+if [ -n "$STORED_PATH" ]; then
+    export PATH="$STORED_PATH"
+fi
 
 # some little helper variables
 export old_bongu=/Volumes/LastLionBook/Users/bongu/
