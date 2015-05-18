@@ -14,9 +14,9 @@ alias lla='ls -lha'
 alias l1='ls -1'
 alias l1d='ls -1d'
 
+bh() { open -a Safari `brew info --json=v1 "$@" | jq -r .[0].homepage`; }
 alias g=git
 alias gri='grep -i'
-
 alias d='diff'
 alias dqr='diff -qr --no-dereference --exclude=".DS_Store" --exclude="._*"'
 
@@ -29,10 +29,8 @@ alias findbiggest='gfind . -printf "%s %p\n" | sort -n  -r | head | cut -d " " -
 
 alias listpath='echo $PATH|tr ":" "\n"'
 alias listalias="alias|sed 's/=.*$//g'"
-
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
 alias urldecode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.argv[1])"'
-
 alias wl='wc -l'
 
 shopt -s nocaseglob
