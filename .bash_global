@@ -14,14 +14,12 @@ alias lla='ls -lha'
 alias l1='ls -1'
 alias l1d='ls -1d'
 
-alias fds='stat -f "%Sm" -t "%Y%m%d"' # fds - file date stamp
-
 alias g=git
 alias gri='grep -i'
-
 alias d='diff'
 alias dqr='diff -qr --no-dereference --exclude=".DS_Store" --exclude="._*" --exclude=".git" --exclude=".hg"'
 
+# file system/directories
 alias pu='pushd .'
 alias po='popd' 
 
@@ -29,15 +27,19 @@ alias findnewest='gfind . -printf "%T@ %Td-%Tm-%TY %TH:%TM %p\n" | sort -n -r  |
 alias findoldest='gfind . -printf "%T@ %Td-%Tm-%TY %TH:%TM %p\n" | sort -n  | head | cut -d " " -f 2-'
 alias findbiggest='gfind . -printf "%s %p\n" | sort -n  -r | head | cut -d " " -f 2-| while read i; do du -h "$i"; done'
 
+#shell stuff
 alias listpath='echo $PATH|tr ":" "\n"'
 alias listalias="alias|sed 's/=.*$//g'"
+alias wl='wc -l'
+alias se='stty -echo'
 
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
 alias urldecode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.argv[1])"'
 
+# package management
+alias fds='stat -f "%Sm" -t "%Y%m%d"' # fds - file date stamp
+bh() { open -a Safari `brew info --json=v1 "$@" | jq -r .[0].homepage`; }
 alias pip_upgrade_all='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U'
 
-alias wl='wc -l'
-alias se='stty -echo'
 
 shopt -s nocaseglob
