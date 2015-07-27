@@ -13,7 +13,10 @@ export GIT_EDITOR=emacsclient
 export emacsexe="/usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs"
 
 # completion
-[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+if [[ ( -z "$INSIDE_EMACS" || "$EMACS_BASH_COMPLETE" = "t" ) ]]; then
+   bind 'set completion-ignore-case on'
+   [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+fi
 
 # the again vexcious PATH stuff
 if [ -n "$STORED_PATH" ]; then

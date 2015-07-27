@@ -14,11 +14,13 @@ alias lla='ls -lha'
 alias l1='ls -1'
 alias l1d='ls -1d'
 
+alias fds='stat -f "%Sm" -t "%Y%m%d"' # fds - file date stamp
+
 alias g=git
 alias gri='grep -i'
 
 alias d='diff'
-alias dqr='diff -qr --no-dereference --exclude=".DS_Store" --exclude="._*"'
+alias dqr='diff -qr --no-dereference --exclude=".DS_Store" --exclude="._*" --exclude=".git" --exclude=".hg"'
 
 alias pu='pushd .'
 alias po='popd' 
@@ -33,6 +35,9 @@ alias listalias="alias|sed 's/=.*$//g'"
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
 alias urldecode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.argv[1])"'
 
+alias pip_upgrade_all='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U'
+
 alias wl='wc -l'
+alias se='stty -echo'
 
 shopt -s nocaseglob
