@@ -9,6 +9,8 @@
 	email = git@halloleo.dot.hailmail.dot.net
 [core]
 	excludesfile = ~/.gitignore_global
+	eol = lf
+	autocrlf = input
 [github]
 	user = halloleo
 [credential]
