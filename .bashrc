@@ -3,9 +3,6 @@
 # machine wide definitions
 [ -f /etc/bashrc ] && . /etc/bashrc
 
-# my global definitions
-. ~/.bash_global
-
 # my machine local definitions
 unamestr=`uname`
 case $unamestr in
@@ -13,3 +10,8 @@ case $unamestr in
     *Darwin*) . ~/.bash_machome;;
     *) echo "warning: no machine-specific '.bash_...' file for uname '$unamestr'";;
 esac
+
+# my global definitions
+# note: do them after PATH is set
+. ~/.bash_global
+

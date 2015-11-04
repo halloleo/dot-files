@@ -18,11 +18,11 @@ if [[ ( -z "$INSIDE_EMACS" || "$EMACS_BASH_COMPLETE" = "t" ) ]]; then
 fi
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion   
 
-# the again vexcious PATH stuff
+# the again vexatious PATH stuff
 if [ -n "$STORED_PATH" ]; then
     export PATH="$STORED_PATH"
 fi
 
 # some little helper variables
-export old_bongu=/Volumes/LastLionBook/Users/bongu/
-export old_hallo=/Volumes/wurzel/Users/hallo
+export home_hallo=/Volumes/wurzel/Users/hallo
+export home_bridge=/Volumes/gap/Users/bridge
