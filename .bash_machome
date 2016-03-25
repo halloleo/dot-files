@@ -26,3 +26,4 @@ fi
 # some little helper variables
 export home_hallo=/Volumes/wurzel/Users/hallo
 export home_bridge=/Volumes/gap/Users/bridge
+export itunes_ati="/Users/bridge/Music/iTunes Main Library/iTunes Music/Automatically Add to iTunes"

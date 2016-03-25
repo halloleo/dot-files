@@ -3,7 +3,7 @@
 shopt -s histappend
 shopt -s cmdhist
 export LESSHISTFILE="-"
-export HISTSIZE=100000
+export HISTSIZE=100000 # done now via environment.rc, but here as well to be safe
 export HISTTIMEFORMAT=" %F %T "
 export HISTCONTROL=ignorespace
 export PROMPT_COMMAND='history -a'
@@ -19,7 +19,7 @@ alias l1d='ls -1d'
 # misc commands
 alias g=git
 alias gri='grep -i'
-alias d='diff'
+alias d='diff --strip-trailing-cr'
 alias dqr='diff -qr --no-dereference --exclude=".DS_Store" --exclude="._*" --exclude=".git" --exclude=".hg"'
 
 # file system/directories
@@ -49,6 +49,19 @@ alias fds='stat -f "%Sm" -t "%Y%m%d"' # fds - file date stamp
 brew_home() { open -a "Google Chrome" `brew info --json=v1 "$@" | jq -r .[0].homepage`; }
 alias pip_upgrade_all='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | (echo "setuptools" && cat) | (echo "pip" && cat)| xargs -n 1 pip install -U'
 alias pip3_upgrade_all='pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1  | (echo "setuptools" && cat) | (echo "pip" && cat)| xargs -n 1 pip3 install -U'
+
+# function to add a elemnt to a colon spereated (PATH like) variable. use like:
+#     prepend_colon_var PATH /home/broleo/bin
+function prepend_colon_var {
+    eval value=\$$1
+    rest=""
+    if [ -n "$value" ]; then
+        rest=$(echo "$value" | sed "s!$2:!!g" | sed "s!$2!!g" | sed 's!:$!!g')
+        [ -n "$rest" ] && rest=":$rest"
+    fi
+    eval export $1=$2$rest
+}
+
 
 # python stuff
 source /usr/local/bin/virtualenvwrapper.sh
