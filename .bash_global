@@ -50,7 +50,7 @@ brew_home() { open -a "Google Chrome" `brew info --json=v1 "$@" | jq -r .[0].hom
 alias pip_upgrade_all='pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | (echo "setuptools" && cat) | (echo "pip" && cat)| xargs -n 1 pip install -U'
 alias pip3_upgrade_all='pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1  | (echo "setuptools" && cat) | (echo "pip" && cat)| xargs -n 1 pip3 install -U'
 
-# function to add a elemnt to a colon spereated (PATH like) variable. use like:
+# function to add a element to a colon-separated (PATH like) variable. use like:
 #     prepend_colon_var PATH /home/broleo/bin
 function prepend_colon_var {
     eval value=\$$1
@@ -59,9 +59,18 @@ function prepend_colon_var {
         rest=$(echo "$value" | sed "s!$2:!!g" | sed "s!$2!!g" | sed 's!:$!!g')
         [ -n "$rest" ] && rest=":$rest"
     fi
-    eval export $1=$2$rest
+    eval export $1=\"$2$rest\"
 }
 
+function postpend_colon_var {
+    eval value=\$$1
+    rest=""
+    if [ -n "$value" ]; then
+        rest=$(echo "$value" | sed "s!:$2!!g" | sed "s!$2!!g" | sed 's!^:!!g')
+        [ -n "$rest" ] && rest="$rest:"
+    fi
+    eval export $1=\"$rest$2\"
+}
 
 # python stuff
 source /usr/local/bin/virtualenvwrapper.sh
