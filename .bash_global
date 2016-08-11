@@ -3,7 +3,7 @@
 shopt -s histappend
 shopt -s cmdhist
 export LESSHISTFILE="-"
-export HISTSIZE=100000
+export HISTSIZE=100000 # done now via environment.rc, but here as well to be safe
 export HISTTIMEFORMAT=" %F %T "
 export HISTCONTROL=ignorespace
 export PROMPT_COMMAND='history -a'
