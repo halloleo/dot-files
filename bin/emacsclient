@@ -1,0 +1,6 @@
+#/bin/bash
+if [ -x "$emacsclientexe" ]; then
+    "$emacsclientexe" "$@"
+else
+    echo "error: variable \$emacsclientexe not set to path of appropriate emacsclient executable"
+fi
