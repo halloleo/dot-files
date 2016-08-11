@@ -1,3 +1,33 @@
+#
+# path stuff
+#
+function prepend_colon_var {
+    eval value=\$$1
+    rest=""
+    if [ -n "$value" ]; then
+        rest=$(echo "$value" | sed "s!$2:!!g" | sed "s!$2!!g" | sed 's!:$!!g')
+        [ -n "$rest" ] && rest=":$rest"
+    fi
+    eval export $1=\"$2$rest\"
+}
+ 
+function postpend_colon_var {
+    eval value=\$$1
+    rest=""
+    if [ -n "$value" ]; then
+        rest=$(echo "$value" | sed "s!:$2!!g" | sed "s!$2!!g" | sed 's!^:!!g')
+        [ -n "$rest" ] && rest="$rest:"
+    fi
+    eval export $1=\"$rest$2\"
+}
+ 
+# the again vexatious PATH stuff
+if [ -n "$STORED_PATH" ]; then
+    export PATH="$STORED_PATH"
+fi
+
+prepend_colon_var PATH /Applications/Postgres.app/Contents/Versions/latest/bin
+
 # prompt
 export PS1="$ "
 
@@ -18,11 +48,6 @@ if [[ ( -z "$INSIDE_EMACS" || "$EMACS_BASH_COMPLETE" = "t" ) ]]; then
    bind 'set completion-ignore-case on'
 fi
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion   
-
-# the again vexatious PATH stuff
-if [ -n "$STORED_PATH" ]; then
-    export PATH="$STORED_PATH"
-fi
 
 # some little helper variables
 export home_hallo=/Volumes/wurzel/Users/hallo
