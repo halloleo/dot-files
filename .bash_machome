@@ -27,6 +27,7 @@ if [ -n "$STORED_PATH" ]; then
 fi
 
 prepend_colon_var PATH /Applications/Postgres.app/Contents/Versions/latest/bin
+prepend_colon_var PATH /Users/jump/.cabal/bin
 
 # prompt
 export PS1="$ "
