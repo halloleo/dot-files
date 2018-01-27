@@ -39,6 +39,11 @@ export AV_LOG_FORCE_NOCOLOR=yes
 
 # machine-depended env vars
 export GIT_EDITOR=emacsclient
+
+# local PYTHON stuff
+export VENV=/Users/Shared/Python/venv/
+export WORKON_HOME="$VENV"
+
 # path to exe of emacs APP
 export emacsexe="/usr/local/Caskroom/emacs/24.5-1/Emacs.app/Contents/MacOS/Emacs-x86_64-10_9"
 export emacsclientexe="/usr/local/Caskroom/emacs/24.5-1/Emacs.app/Contents/MacOS/bin-x86_64-10_9/emacsclient"
