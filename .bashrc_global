@@ -35,6 +35,9 @@ alias lmc='listmycmds'
 
 # Python aliases
 alias pe=pipenv
+alias per='pipenv run'
+alias pepython='pipenv run python'
+alias pepy='pipenv run python'
 
 #
 # special stuff when inside Emacs
