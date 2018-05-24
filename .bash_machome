@@ -20,14 +20,27 @@ function postpend_colon_var {
     fi
     eval export $1=\"$rest$2\"
 }
- 
+
+function clean_colon_var {
+    eval value=\$$1
+    clean=""
+    if [ -n "$value" ]; then
+        clean=$(echo "$value" | sed 's!^:!!g')
+    fi
+    eval export $1=\"$clean\"
+}
+
 # the again vexatious PATH stuff
 if [ -n "$STORED_PATH" ]; then
     export PATH="$STORED_PATH"
 fi
 
-prepend_colon_var PATH /Applications/Postgres.app/Contents/Versions/latest/bin
-prepend_colon_var PATH /Users/jump/.cabal/bin
+clean_colon_var PATH
+prepend_colon_var PATH /usr/local/bin
+prepend_colon_var PATH ~/share/bin
+prepend_colon_var PATH ~/Dropbox/bin
+prepend_colon_var PATH ~/bin
+postpend_colon_var PATH ~/.cabal/bin
 
 # prompt
 export PS1="$ "
@@ -44,10 +57,14 @@ export GIT_EDITOR=emacsclient
 # local PYTHON stuff
 export VENV=/Users/Shared/Python/venv/
 export WORKON_HOME="$VENV"
+export PYTHONPATH=$HOME/share/lib/python
+
+#Homebrew stuff
+export HOMEBREW_CASK_OPTS='--appdir=/Applications/Optional/Homebrew'
 
 # path to exe of emacs APP
-export emacsexe="/usr/local/Caskroom/emacs/24.5-1/Emacs.app/Contents/MacOS/Emacs-x86_64-10_9"
-export emacsclientexe="/usr/local/Caskroom/emacs/24.5-1/Emacs.app/Contents/MacOS/bin-x86_64-10_9/emacsclient"
+export emacsexe="/Applications/Optional/Homebrew/Emacs.app/Contents/MacOS/Emacs"
+export emacsclientexe="/Applications/Optional/Homebrew/Emacs.app/Contents/MacOS/bin/emacsclient"
 
 # completion
 if [[ ( -z "$INSIDE_EMACS" || "$EMACS_BASH_COMPLETE" = "t" ) ]]; then
