@@ -1,0 +1,44 @@
+#
+# bash aliases and functions for all bashes I use
+#
+
+alias sudo='sudo ' # to pass aliases through to sudo. See https://wiki.archlinux.org/index.php/Sudo#Passing_aliases
+alias ll='ls -lh'
+alias lld='ls -lhd'
+alias lla='ls -lha'
+alias l1='ls -1'
+alias l1d='ls -1d'
+
+mkcd() { mkdir "$@" && cd "${!#}"; }
+alias g=git
+alias gri='grep -i'
+
+alias d='diff --strip-trailing-cr --exclude=".DS_Store"'
+alias dqr='diff -qr --exclude=".DS_Store"'
+
+alias listpath='echo $PATH|tr ":" "\n"'
+alias listalias="alias|sed 's/=.*$//g'"
+
+# wht - WHich Type: list path and type of commands on PATH
+wht () { cmd=$1; cp=$(which "$cmd"); if [ -n "$cp" ]; then echo "Path in PATH: $cp"; ct=$(readlink "$cp"); [ -z "$ct" ] && ct="$cp"; cf=$(file $ct); echo "File type: $cf"; [[ $cf == *text* ]] && head $cp; fi; }
+
+alias wl='wc -l'
+alias curl='curl -L'
+alias se='stty -echo'
+
+# encoding stuff
+alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
+alias urldecode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.argv[1])"'
+
+# My tools
+alias lmc='listmycmds'
+
+# Python aliases
+alias pe=pipenv
+
+#
+# special stuff when inside Emacs
+#
+if [ -n "$INSIDE_EMACS" ]; then
+   stty -echo
+fi

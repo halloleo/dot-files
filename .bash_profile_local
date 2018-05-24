@@ -1,0 +1,58 @@
+#
+# bash environment customization only for ACCRAD01
+#
+function prepend_colon_var {
+    eval value=\$$1
+    rest=""
+    if [ -n "$value" ]; then
+        rest=":${value}:"
+        rest="${rest/:$2:/:}"
+        rest="${rest##:}"
+        rest="${rest%%:}"
+        [ -n "$rest" ] && rest=":$rest"
+    fi
+    eval export $1=\"$2$rest\"
+}
+
+function postpend_colon_var {
+    eval value=\$$1
+    rest=""
+    if [ -n "$value" ]; then
+        rest=":${value}:"
+        rest="${rest/:$2:/:}"
+        rest="${rest##:}"
+        rest="${rest%%:}"
+        [ -n "$rest" ] && rest="$rest:"
+    fi
+    eval export $1=\"$rest$2\"
+}
+
+# Python virtual envs
+export WORKON_HOME="$HOME/share/venv"
+
+#
+# Path stuff
+#
+export MYCMDSPATH=
+prepend_colon_var PATH "$HOME/bin"
+prepend_colon_var PATH "$WORKON_HOME/bin"
+# Don't show the commands from venv bin in listmycmds
+prepend_colon_var MYCMDSPATH "-$WORKON_HOME/bin" 
+
+#
+# Machine-dependend environment vars
+#
+export emacsexe=/Applications/Emacs.app/Contents/MacOS/Emacs
+export emacsclientexe=/Applications/Emacs.app/Contents/MacOS/bin/emacsclient
+
+export VENV=$HOME/share/venv
+export PYTHONPATH=$HOME/share/lib/python
+
+export HOMEBREW_CASK_OPTS='--appdir=/Applications/Homebrew'
+
+# completion
+if [[ ( -z "$INSIDE_EMACS" || "$EMACS_BASH_COMPLETE" = "t" ) ]]; then
+   bind 'set completion-ignore-case on'
+fi
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion   
+

@@ -1,0 +1,6 @@
+#
+# bash aliases and functions for only for Macbook
+#
+
+alias og='open -a "Google Chrome"'
+alias os='open -a "Safari"'

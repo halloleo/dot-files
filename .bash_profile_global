@@ -1,0 +1,25 @@
+#
+# bash environment customization for all bashes I use
+#
+export PS1="$ "
+
+shopt -s histappend
+shopt -s cmdhist
+export LESSHISTFILE="-"
+export HISTSIZE=100000
+export HISTTIMEFORMAT=" %F %T "
+export HISTCONTROL=ignorespace
+export PROMPT_COMMAND='history -a'
+
+# git stuff
+export GIT_EDITOR=emacsclient
+
+# python stuff
+export PIPENV_DEFAULT_PYTHON_VERSION=3.6
+
+# globbing
+shopt -s nocaseglob
+shopt -s nullglob
+
+# umask
+umask 022
